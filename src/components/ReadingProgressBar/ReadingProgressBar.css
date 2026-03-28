@@ -1,0 +1,25 @@
+/* ── Reading Progress Bar ── */
+.reading-progress-bar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    z-index: 999;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+}
+
+.reading-progress-bar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -1px;
+    width: 8px;
+    height: 5px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--primary-color);
+    opacity: 0.8;
+}

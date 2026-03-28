@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* ── Light Theme (default) ── */
+:root {
+  --primary-color: #1B2A4A;
+  --primary-hover: #142038;
+  --accent-color: #3B5998;
+  --category-accent: #5B7DB1;
+  --background-color: #F7F8FA;
+  --surface-color: #ffffff;
+  --card-bg: #ffffff;
+  --card-border: #E5E7EB;
+  --text-color: #1A1A2E;
+  --text-secondary: #4A4A68;
+  --text-muted: #6B6B87;
+  --border-color: #E5E7EB;
+  --error-color: #DC3545;
+  --success-color: #28A745;
+  --warning-color: #E8A317;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.10);
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* ── Category Colors ── */
+  --cat-technology: #6366f1;
+  --cat-business: #22c55e;
+  --cat-health: #ef4444;
+  --cat-science: #06b6d4;
+  --cat-sports: #f59e0b;
+  --cat-entertainment: #ec4899;
+}
+
+/* ── Dark Theme ── */
+[data-theme="dark"] {
+  --primary-color: #8EAED4;
+  --primary-hover: #A3BFE0;
+  --accent-color: #6B8FCC;
+  --category-accent: #8EAED4;
+  --background-color: #0F1723;
+  --surface-color: #1A2435;
+  --card-bg: #1A2435;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-color: #E8ECF1;
+  --text-secondary: #B0B8C9;
+  --text-muted: #7A8599;
+  --border-color: #2A3546;
+  --error-color: #F87171;
+  --success-color: #4ade80;
+  --warning-color: #fbbf24;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --navbar-bg: rgba(15, 23, 35, 0.92);
+}
+
+/* ── Base Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text-color);
+}
+
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* ── Focus styles ── */
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ── Animation Utilities ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ── Scroll-Triggered Animations ── */
+/* Content is visible by default. JS adds .scroll-observed class first,
+   then .is-visible is added by IntersectionObserver. */
+.animate-on-scroll.scroll-observed {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children animations */
+.animate-on-scroll.is-visible .animate-child:nth-child(1) { transition-delay: 0.05s; }
+.animate-on-scroll.is-visible .animate-child:nth-child(2) { transition-delay: 0.10s; }
+.animate-on-scroll.is-visible .animate-child:nth-child(3) { transition-delay: 0.15s; }
+.animate-on-scroll.is-visible .animate-child:nth-child(4) { transition-delay: 0.20s; }
+.animate-on-scroll.is-visible .animate-child:nth-child(5) { transition-delay: 0.25s; }
+.animate-on-scroll.is-visible .animate-child:nth-child(6) { transition-delay: 0.30s; }
+
+.animate-child {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.animate-on-scroll.is-visible .animate-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Glassmorphism Utility ── */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Category Color Badges ── */
+.cat-badge-technology { color: var(--cat-technology); }
+.cat-badge-business { color: var(--cat-business); }
+.cat-badge-health { color: var(--cat-health); }
+.cat-badge-science { color: var(--cat-science); }
+.cat-badge-sports { color: var(--cat-sports); }
+.cat-badge-entertainment { color: var(--cat-entertainment); }
+
+/* ── Read indicator ── */
+.article-read-indicator {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Page transition ── */
+.page-transition-enter {
+  animation: pageEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

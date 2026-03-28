@@ -1,0 +1,126 @@
+/* ── Search Page ── */
+.search-page {
+    padding-top: 2rem;
+    min-height: 60vh;
+}
+
+.search-page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.search-page-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.search-page-header p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+/* Full-width search input */
+.search-page-input-wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 1.75rem;
+}
+
+.search-page-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    opacity: 0.5;
+}
+
+.search-page-input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
+    color: var(--text-color);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.search-page-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(27, 42, 74, 0.08);
+}
+
+[data-theme="dark"] .search-page-input:focus {
+    box-shadow: 0 0 0 3px rgba(142, 174, 212, 0.12);
+}
+
+/* Filters */
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.search-filter-btn {
+    padding: 0.45rem 0.95rem;
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+.search-filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.search-filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Results count */
+.search-results-info {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.search-results-info strong {
+    color: var(--text-color);
+}
+
+/* No results */
+.search-no-results-page {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+}
+
+.search-no-results-page span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.search-no-results-page p {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .search-page-header h1 {
+        font-size: 1.5rem;
+    }
+}

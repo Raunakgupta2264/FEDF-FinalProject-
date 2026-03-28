@@ -1,0 +1,213 @@
+.article-reader {
+    max-width: 780px;
+    padding: 2.5rem 1rem;
+    animation: fadeInUp 0.4s ease;
+}
+
+.reader-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.reader-category {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    padding: 3px 14px;
+    border-radius: var(--radius-sm);
+    background: var(--primary-color);
+    transition: background var(--transition-fast);
+}
+
+/* Category-specific reader badge colors */
+.reader-category.cat-badge-technology { background: var(--cat-technology); }
+.reader-category.cat-badge-business   { background: var(--cat-business); }
+.reader-category.cat-badge-health     { background: var(--cat-health); }
+.reader-category.cat-badge-science    { background: var(--cat-science); }
+.reader-category.cat-badge-sports     { background: var(--cat-sports); color: #1a1a2e; }
+.reader-category.cat-badge-entertainment { background: var(--cat-entertainment); }
+
+.reader-category:hover {
+    filter: brightness(0.9);
+}
+
+.reader-title {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-color);
+}
+
+.reader-meta {
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.reader-source {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.reader-reading-time {
+    color: var(--category-accent);
+    font-weight: 600;
+}
+
+/* ── Action Buttons ── */
+.reader-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.reader-action-btn {
+    padding: 7px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+.reader-action-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.reader-action-btn.bookmarked {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ── Image ── */
+.reader-image {
+    margin-bottom: 2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.reader-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── Content — Enhanced Typography ── */
+.reader-content {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--text-secondary);
+}
+
+.reader-summary {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1.25rem;
+    font-style: italic;
+    line-height: 1.7;
+    background: rgba(27, 42, 74, 0.03);
+    padding: 1rem 1.25rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+[data-theme="dark"] .reader-summary {
+    background: rgba(142, 174, 212, 0.05);
+}
+
+/* Drop cap on first paragraph */
+.reader-first-paragraph::first-letter {
+    font-family: var(--font-heading);
+    float: left;
+    font-size: 3.8rem;
+    line-height: 0.85;
+    font-weight: 700;
+    margin-right: 0.12em;
+    margin-top: 0.05em;
+    color: var(--primary-color);
+}
+
+.reader-body p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Pull quote style for longer paragraphs */
+.reader-body p:nth-child(3) {
+    position: relative;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-color);
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    border-left: 3px solid var(--accent-color);
+    margin: 2rem 0;
+    line-height: 1.7;
+}
+
+/* ── Footer ── */
+.reader-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-size: 0.88rem;
+}
+
+.back-link:hover {
+    color: var(--primary-hover);
+    transform: translateX(-3px);
+}
+
+.reader-footer-source {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+@media (max-width: 600px) {
+    .reader-title {
+        font-size: 1.7rem;
+    }
+
+    .reader-first-paragraph::first-letter {
+        font-size: 2.8rem;
+    }
+
+    .reader-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
